@@ -1,0 +1,67 @@
+a {
+    text-decoration-line: none;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: PT Sans;
+    flex-wrap: wrap;
+    background-color: #222228;
+}
+
+#mainWraper {
+    width: 980px;
+    background-color: #3a3b47;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 399px) {
+    #testoIntro {
+        flex-basis: 363px;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    #testoIntro {
+    }
+}
+
+@media only screen and (max-width:499px) {
+    #team {
+        order: 2;
+    }
+
+    #testoIntro {
+        order: 1;
+        flex-basis: 582px;
+    }
+}
+
+#testoFooter {
+    color: #ffffff;
+    font-family: PT Sans;
+}
+
+.linkTitoli {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.linkTitoli:hover {
+   /* transform: scale(1.1); */
+   text-decoration: none;
+   opacity: 0.7;
+   transition-duration: 200ms;
+}
+
+.pg-empty-placeholder {
+  transition-duration: 300ms;
+}
+
+.pg-empty-placeholder:hover {
+  opacity:0.7;
+  transition-duration: 300ms;
+}

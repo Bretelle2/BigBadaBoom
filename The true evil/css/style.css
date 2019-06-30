@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-family: PT Sans;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+#mainWraper {
+  width: 980px;
+  background-color: #3a3b47;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 399px) {
+    #testoIntro {
+        flex-basis: 363px;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    #testoIntro {
+    }
+}
+
+@media only screen and (max-width:499px) {
+    #team {
+        order: 2;
+    }
+
+    #testoIntro {
+        order: 1;
+        flex-basis: 582px;
+    }
+}

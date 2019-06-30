@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alpha Sunshine - RIGGING E ANIMAZIONI</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700">
+    </head>
+    <body style="display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: PT Sans;
+    flex-wrap: wrap;
+    background-color: #222228;">
+        <div style="height: 60vh;
+    color: #000000;
+    background-color: #939393;
+    width: 100vw;
+    position: inherit;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url('res_home/Fase4.png');
+    background-size: cover;
+    background-position: center top;">
+            <div style="color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    align-self: center;
+    width: 100%;
+    font-size: 50px;">
+                <b spellcheck="true" data-medium-editor-element="true" role="textbox" aria-multiline="true" data-medium-editor-editor-index="8" medium-editor-index="fd81104d-449a-4d1c-2255-7a6cdd64d2b3" data-placeholder="Type your text" data-medium-focused="true" style="text-transform: uppercase;
+    text-shadow: 1px 1px 2px #000000;">Rigging e animazioni</b>
+            </div>
+        </div>
+        <div id="mainWraper" style="width: 980px;
+    background-color: #3a3b47;
+    justify-content: center;
+    padding: 2em 2em 1em;
+    align-self: center;">
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;"><span style="font-size: 16pt;
+    font-weight: bold;">RAGAZZO</span><br><br>
+Multiple soluzioni sono state esplorate per quanto riguarda il rig del ragazzo. <br>
+        Una prima versione, che prevedeva un rig più complesso per le dita (basato su <a style="text-decoration: underline;" href="https://www.youtube.com/watch?v=PlL9Ez9SyS0&t=835s">questo tutorial</a>) è stata scartata per via di problemi nel reset dei root delle dita causati dal constraint childOf. <br>
+Una seconda versione ottenuta con l’add-on Rigify prevedeva anch’essa un rig completo delle mani, tuttavia sono sorti problemi da una parte di weight paint, che hanno portato a un rifacimento parziale del modello, unendo in una sola mesh giacca, ragazzo, visore e cuffie; dall’altro il modello della mano non si presentava adatto ad essere riggato per via dell’eccessiva semplicità dello stile e della lunghezza del palmo rispetto alle dita. <br>
+La versione finale è quindi stata ottenuta sempre con rigify, ma non presenta ossa per il controllo facciale, delle orecchie o delle mani, compito che è stato delegato invece a shape keys, e presenta invece sia ossa IK (rosse) che FK (verdi) per gli arti con possibilità di passare da una modalità all’altra a seconda delle necessità. Sono inoltre presenti ossa dedicate ad aggiustamenti (blu). In giallo le ossa dedicate all’asse longitudinale.</p>
+            <img style="width: 80%;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 10%;" src="res_4/rig%20in%20evidenza.png">
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">L’animazione del ragazzo, del suo zaino e della cinghia è stata realizzata sia attraverso keyframe che shape keys. <br><br>
+I movimenti del ragazzo seguono la regola dell’ ”everything is a bouncing ball”. Infatti nella maggior parte delle animazioni la mesh del ragazzo viene distorta per accentuare il movimento e migliorare il senso di dinamicità.</p>
+            <img style="width: 80%;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 10%;" src="res_4/runcycle.jpg">
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="width: 80%;
+    display: block;
+    margin: 0 0;">
+                <source src="https://i.imgur.com/wJPr2A0.mp4" type="video/mp4">
+            </video>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1em 0;
+    width: 80%;">
+                <source src="https://i.imgur.com/KuaNu0V.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;
+    width: 80%;">Le orecchie meccaniche sono state ideate per creare movimento secondario nel personaggio e rendere le animazioni più accattivanti. <br>Allo stesso modo la tracolla segue i movimenti del personaggio con leggero ritardo. Questo ha reso necessario, nella maggior parte dei casi, settare manualmente i keyframe per la rotazione e la posizione invece che utilizzare il constraint copyPosition in riferimento ad un osso della spalla del rig del ragazzo (soluzione che è comunque stata utilizzata in determinati contesti, specialmente quando la tracolla non era visibile dal punto di vista della camera.)  <br><br>
+Anche il led di stato presente sul casco del ragazzo è stato animato modificando il valore di intensità dell’emitter ciclicamente.</p>
+            <video preload="auto" autoplay="autoplay" loop="loop" style="display: block;
+    margin: 1.5em 0;
+    width: 80%;" muted>
+                <source src="https://i.imgur.com/0V8AzIU.mp4" type="video/mp4">
+            </video>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 80%;">
+                <source src="https://i.imgur.com/fmrUWQH.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;">Il salto del ragazzo dall’edificio è stato basato su video di Freerunning e Parkour </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/f0xyzj545tc?start=74&amp;rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="display: block;
+margin: 0 0;"></iframe>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    width: 560px;
+    margin: 1.5em 0">
+                <source src="https://i.imgur.com/YVfhHty.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;">La fase dell’arrampicata è stata in un primo tempo ripresa da video di free climbing</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Phl82D57P58?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="display: block;
+margin: 0 0;"></iframe>
+            <p style="color: #ffffff;">Ma in un secondo momento, considerando la natura magnetica dei guanti da scalata, si è optato per riprendere le movenze del seguente apparato:
+e del seguente apparato:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/x3VdQHWDSpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="display: block;
+margin: 0 0;"></iframe>
+            <p style="color: #ffffff;">Il movimento delle gambe è leggermente ritardato rispetto a quello delle braccia per evitare l’effetto meccanico del video precedente.<br>
+Le altre animazioni, le quali richiedevano meno atleticità sono state studiate allo specchio.<br><br><br><span style="font-size: 16pt;
+    font-weight: bold;">ROBOT</span><br><br>Il rig del robot è alquanto semplice, essendo che il modello compie movimenti “meccanici” e quindi non necessita di un weight paint particolare.
+L’armatura si può dividere in tre sezioni principali (gambe, corpo e arma), tutte imparentate ad un bone di “root” usato per spostarlo nelle scene.<br>
+La primissima sezione dell’armatura sono le gambe, ognuna composta da cinque bone collegate sequenzialmente l’una all’altra. Un bone “IK target” vicino all’ultimo bone della gamba permette tramite cinematica inversa di controllare tutte e cinque le bone dell’arto. Inoltre sono presenti due bone “target” che permettono di controllarne l’orientamento (anche se ne è stato usato solo uno).<br>
+La sezione del corpo, invece, presenta solo due bone: uno per controllare tutto il corpo del robot (al quale sono imparentate “a distanza” l’osso iniziale delle quattro gambe) e uno con funzione “Damped Track” che permette di rivolgere il “muso” del robot nella sua direzione.<br>
+Infine il terzo sottoinsieme dell’armatura è quello dell’arma composto da quattro bone: uno che controlla tutta l’arma, due (imparentati come figli al primo) che controllano la rotazione dei due rotori dell’arma e uno con funzione “Damped Track” che serve per facilitare il puntamento dell’arma.</p>
+            <img src="res_4/RigTOT.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;">
+            <p style="color: #ffffff;">Il malfunzionamento del robot è stato comunicato anche tramite l’indebolimento dei fari frontali. Per realizzare ciò è stato utilizzato un noise modifier che ha generato valori casuali per l’intensità dell’emitter, tutto questo all’interno di due range di tempo definiti.</p>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 80%;">
+                <source src="https://i.imgur.com/uBYQohI.mp4" type="video/mp4">
+            </video>
+            <img src="res_4/GraphEditor_flickeringRobot.PNG" style="width: 100%;">
+            <p style="color: #ffffff;">Le curve dei tre parametri hanno un lieve sfasamento tra di loro per migliorare la credibilità del lampeggiamento.<br><br><br><span style="font-size: 16pt;
+    font-weight: bold;">WALKING CYCLE ROBOT</span><br><br>Una delle animazioni che vengono inquadrate di più del robot è la camminata in avanti, per questo abbiamo deciso di comporre un walk-cylce e di usare quello per tutte le scene che lo richiedessero.
+Essendo il robot quadrupede, ci siamo concentrati nei primissimi tempi di animazione nella ricerca di reference per la sua camminata.
+Originariamente la nostra ricerca si è rivolta ai Dragoons, un'unità militare del gioco StarCraft.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mAcOQUvctCM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="display: block;
+margin: 1.5em 0;"></iframe>
+            <p style="color: #ffffff;">Questa reference però è stata scartata quasi subito per via del diverso orientamento delle giunture delle gambe rispetto a quello del nostro robot.
+Ci siamo così concentrati sul camminatore AT-AT della saga di Star Wars. </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GUsOouwjsL4?start=22s&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" style="display: block;
+margin: 1.5em 0;"></iframe>
+            <p style="color: #ffffff;">Questo ha portato alla seguente animazione:</p>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted="" style="display: block;
+    margin: 1.5em 0;
+    width: 600px;">
+                <source src="https://i.imgur.com/1ONSXMK.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;">la quale, anche se soddisfacente, poteva essere migliorata.<br><br>
+Abbiamo così iniziato a basare la nostra camminata su quella dei ragni (una delle prime ispirazioni nella fase di concettualizzazione del robot).
+In particolare ci siamo concentrati solo sulle paia centrali, escludendo quelle frontali e posteriori:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GtHzpX0FCFY?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: block;
+margin: 1.5em 0;"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xQ8_KnuWnMs?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: block;
+margin: 1.5em 0;"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/E9-_gZ8m0Eo?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: block;
+margin: 1.5em 0;"></iframe>
+            <p style="color: #ffffff;">Questo approccio ci ha portati al seguente risultato, il quale ci sembrava già più soddisfacente: </p>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 650px;">
+                <source src="https://i.imgur.com/p5GpIm3.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;">Tuttavia mancava ancora qualche cosa: il robot non ci sembrava abbastanza “meccanico”, o “pesante”. <br><br>
+Abbiamo così optato per abbassare il corpo del robot durante la camminata, per dare la parvenza di migliore stabilità, e aggiunto una leggera flessione alle gambe quando impattano il terreno, come se stesse attutendo il colpo e il suo peso. </p>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 650px;">
+                <source src="https://i.imgur.com/NLHVni7.mp4" type="video/mp4">
+            </video>
+            <iframe width="640" height="480" src="https://sketchfab.com/models/2a1054fb38c14463b8271a747ca0ed09/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true" style="display: block;
+    margin: 1.5em 0;;
+    width: 100%;"></iframe>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;"><span style="font-size: 16pt;
+    font-weight: bold;">DISTRUZIONE DEL SUOLO</span><br><br>Questo effetto è stato realizzato grazie all’utilizzo del dynamic paint. Una volta generato il suolo frammentato attraverso l’add-on “cell fracture”, ogni singolo frammento è stato imparentato ad una mesh triangolare, ognuna di queste facenti parte di un singolo oggetto. Il parenting di massa è stato possibile grazie ad uno script realizzato da un gentile utente del forum blenderartist.net di nome <a style="text-decoration: underline;" href="https://vimeo.com/user5529153" "">Liero</a>. L’oggetto con i triangoli è diventato il canvas del dynamic paint, mentre il ruolo di brush è stato dato ad un cilindro con una base a tronco di cono. Il cilindro a contatto con i triangoli sottostanti ha attuato un displacement a questi ultimi, che hanno trasferito a loro volta la rototraslazione al frammento di suolo a cui erano imparentate.</p>
+            <img src="res_4/fractureZenit.PNG" style="width: 60%;
+    margin-right: auto;
+    display: block;
+    margin-left: 0;"/>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/FcRCwek.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;"><span style="font-size: 16pt;
+    font-weight: bold;">
+CARICAMENTO DELL’ARMA</span><br><br>L’effetto particellare del caricamento dell’arma è stato diviso in due fasi, ognuna con il suo specifico Particle System. Entrambi i tipi di particelle sono generati da un icosaedro posto frontalmente alla canna dell’arma, e la traiettoria è modificata dai diversi force fields presenti al suo interno. La direzione dell’emitter è rivolta verso l’interno dell’icosaedro, dunque con un parametro Normal con valore negativo. Questo per fare in modo che l’effetto particellare sia direzionato verso l’arma e dare quindi l’effetto di “caricamento”.</p>
+            <img src="res_4/bigParticleSysTOT.png" style="width: 70%;
+    margin-left: 0;
+    margin-right: auto;
+    display: block;"/>
+            <img src="res_4/PS_PhysicsDescription.png" style="width: 60%;
+    margin-left: 0;
+    margin-right: auto;
+    display: block;
+    margin-top: 1em;"/>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/NeF6UPf.mp4" type="video/mp4">
+            </video>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/vrh1hGx.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;"><span style="font-size: 11pt;
+    font-weight: bold;">Particelle verdi - </span>Primo stadio del caricamento dell’arma. Questo effetto particellare ha come base delle particelle icosaedriche il cui movimento è solo lievemente influenzato dai vortex. Si è inoltre deciso di dare una lieve randomizzazione all’emitter così come alla dimensione delle particelle.<br><br><span style="font-size: 11pt;
+    font-weight: bold;">Particelle rosse - </span>Secondo stadio del caricamento dell’arma. La forma di queste particelle è cubica, ed è funzionale alla dimensione con cui vengono visualizzate. Infatti essendo di piccole dimensioni non c’è stata necessità di utilizzare geometrie complesse che avrebbero aumentato i tempi di render. Questo effetto particellare è influenzato solamente dai due vortex e dal force field animato, il quale effetto combinato fa ruotare queste particelle in un anello che avanza fino al culmine del wireframe icosaedrico in rotazione.<br><br><br><span style="font-size: 16pt;
+    font-weight: bold;">IL FUMO</span><br><br>
+Il fumo in lontananza nella prima scena è alquanto semplice, essendo che doveva essere un elemento di sfondo e non rappresentare la parte principale della scena.
+Il “sistema” è composto dal dominio, un emitter (un icosaedro a metà) e un wind generator con limitazioni sull’area di influenza, che permette così al fumo di essere spinto dal vento solo quando raggiunge una certa altezza. </p>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/fsTY4hd.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">Lo shader del fumo è anch'esso semplice per i motivi sopra citati, e in più perché così ci garantiva tempi di render accettabili </p>
+            <img src="res_4/fumoSettingsTOT.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <img src="res_4/TestFumo1.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <img src="res_4/TestFumo2.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <img src="res_4/TestFumo3.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <img src="res_4/TestFumo4.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <img src="res_4/TestFumo5.png" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;"><span style="font-size: 16pt;
+    font-weight: bold;">LA POLVERE</span> <br><br>
+Originariamente avevamo provato anche a creare l’effetto polvere che si doveva sollevare quando il robot spaccava il terreno.<br>
+Varie prove sono state fatte con il simulatore del fumo emanando sempre dalle facce di metà icosaedro il fumo con una vorticity elevata, inoltre per aumentare la turbolenza del fumo si è aggiunto un turbulence emitter.  <br>
+Per dare l’effetto di “deposito” della polvere è stato animato il valore temperature del fumo, iniziando con un valore alto per farlo salire per poi abbassarlo per farlo scendere.<br>
+lo shader è uguale a quello del fumo, ma con una densità del volume absorption e scatter inferiori e un dissolve del fumo maggiore.</p>
+            <img src="res_4/polvereSettins.PNG" style="width: 35%;
+    display: block;
+    margin: 1.5em 0;"/>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    width: 60%;
+    margin: 1.5em 0;">
+                <source src="https://i.imgur.com/CEdIjy7.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">Purtroppo si è dovuto rimuovere questo effetto a causa dei tempi di render che diventavano troppo lunghi quando veniva aggiunto questo effetto. Inoltre non si mischiava bene con lo stile e i toni cell shading del corto.<br><br><br><span style="font-size: 16pt;
+    font-weight: bold;">LE SCINTILLE</span><br><br>
+L’effetto particellare delle scintille usato per simboleggiare i malfunzionamenti del robot è stato creato con il motore di particelle di blender.
+Per dare l’idea di scintille si è optato per un numero basso di particelle con una vita corta e un alto valore di casualità della durata della vita. </p>
+            <img src="res_4/scintilleTOT.png" style="display: block;
+    margin: 1.5em 0;
+    width: 50%;"/>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">Le particelle vengono emesse da un cilindro tagliato a metà (nel caso delle giunture) e un gruppo di piani rivolti in direzione delle grate del robot (nel caso dell’exhaust). La loro velocità iniziale è abbastanza alta, e anche qui abbiamo una casualità di velocità e direzione di emissione piuttosto elevata. Infine anche la rotazione delle particelle è casuale. </p>
+            <div style="display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;">
+                <video preload="auto" autoplay="autoplay" loop="loop" muted style="width: 450px;
+    margin: 1.5em 0;">
+                    <source src="https://i.imgur.com/28pOzXo.mp4" type="video/mp4">
+                </video>
+                <video preload="auto" autoplay="autoplay" loop="loop" muted style="width: 450px;
+    margin: 1.5em 0;">
+                    <source src="https://i.imgur.com/Ivo78NZ.mp4" type="video/mp4">
+                </video>
+            </div>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">Le particelle vengono renderizzate dal motore di render (cycles) come delle icosphere con piccola dimensione casuale, alle quali si è applicato un materiale emission unito a uno transparent. Questo materiale inoltre reagisce a seconda della vita della particella: è più rosso e con una componente di emitter maggiore se la particella è più giovane o più giallo e con una componente di transparent maggiore se invece è più vecchia.</p>
+            <img src="res_4/ScintillaMAT.PNG" style="width: 80%;
+    margin-left: 0;
+    margin-right: 10%;"/>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">Completa l’effetto il motion blur, che ne permette di “disegnarne” la scia. <br><br><br><span style="font-size: 16pt;
+    font-weight: bold;">LE BANDIERE</span><br><br>
+Le bandiere del quartier generale mosse dal vento sono composte da un semplice piano a cui è stato applicato un cloth modifier. La bandiera rimane ancorata alla struttura tramite il pinning degli spigoli superiori del piano. Il vento direzionato è comune ad entrambe le bandiere. Per evitare di ottenere lo stesso identico movimento su tutte e due si è deciso di variare lievemente i parametri del cloth modifier, aggiungendo anche un lieve sfasamento all’animazione della bandiera di destra.</p>
+            <img src="res_4/flagSettings.png" style="width: 35%;
+    margin-left: 0;
+    margin-right: auto;
+    margin-bottom: 1em;
+    display: block;"/>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/bK6X8LL.mp4" type="video/mp4">
+            </video>
+            <p style="color: #ffffff;
+    text-align: left;
+    width: 80%;
+    font-size: 11pt;">Completa l’effetto il motion blur, che ne permette di “disegnarne” la scia. <br><br><br><span style="font-size: 16pt;
+    font-weight: bold;">MOVIMENTI DI CAMERA</span><br><br>I movimenti di camera sono per la maggior parte piuttosto semplici, si va dai dolly-in per enfatizzare l’attenzione su qualche particolare della scena, a dei camera follow per seguire i movimenti del ragazzo.
+I camera shake ottenuti con un noise modifier hanno contribuito a donare senso di massività ad ogni passo del robot.</p>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/f3yzkkP.mp4" type="video/mp4">
+            </video>
+            <video preload="auto" autoplay="autoplay" loop="loop" style="width: 60%;
+    display: block;
+    margin: 1.5em 0;" muted>
+                <source src="https://i.imgur.com/jlCavSG.mp4" type="video/mp4">
+            </video>
+            <video preload="auto" autoplay="autoplay" loop="loop" muted style="display: block;
+    margin: 1.5em 0;
+    width: 60%;">
+                <source src="https://i.imgur.com/KoYTo4y.mp4" type="video/mp4">
+            </video>
+            <div name="anchor" style="width: 50%;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 6em 25% 2em;
+    text-align: center;">
+                <a href="index.html" style="text-decoration: none;" class="linkTitoli">Torna alla homepage</a>
+            </div>
+            <div id="testoFooter" style="text-align: center;
+    font-size: 12px;
+    padding-bottom: 0;
+    border-top: 1px solid #ffffff;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 2em;">Prof. Miglio Edie e Mattia Penati
+                <br>Corso di storia dell’arte contemporanea, A.A. 2017/2018
+                <br>Design della Comunicazione, Politecnico di Milano.&nbsp;
+            </div>
+        </div>
+    </body>
+</html>
