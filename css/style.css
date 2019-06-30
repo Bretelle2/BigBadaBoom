@@ -2,7 +2,7 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
-  font-family: PT Sans;
+  font-family: 'B612 Mono', monospace;
   flex-wrap: wrap;
   background-color: #ffffff;
 }
