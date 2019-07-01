@@ -36,6 +36,7 @@
     text-shadow: 1px 1px 2px #000000;">Modellazione e compositing</b>
             </div>
         </div>
+
         <div id="mainWraper" style="width: 980px;
     background-color: #75001F;
     justify-content: center;
@@ -43,77 +44,19 @@
     align-self: center;">
             <p style="color: #ffffff;
     text-align: left;
+    padding: 2em ;
     width: 80%;
-    font-size: 11pt;">Per quanto riguarda la modellazione la città è stata realizzata partendo da una serie di otto edifici ripetuti e ruotati in diverse direzioni, oltre ad un semplice marciapiede modulare ed estendibile. Il robot è stato realizzato attraverso le tecniche di subdivision surface per facilitare la scalabilità del dettaglio in base alla scena. Il ragazzo è stato realizzato con l’ausilio dello smooth shading e le custom split normals per determinare gli hard-edges della mesh.<br> La scelta di un’estetica cartoonesca è stata guidata dalla maggiore rapidità di modellazione degli asset ma anche alle maggiori possibilità espressive permesse.</p>
-            <div style="display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 0;">
-                <img style="margin-left: 0;
-    margin-right: 1%;
-    width: 380px;
-    margin-top: 2%;" src="res_3/RobotWire.png"/>
-                <img style="width: 380px;
-    margin-left: 0;
-    margin-right: 1%;
-    margin-top: 2%;" src="res_3/boyWireframe.PNG"/>
-            </div>
-            <img style="width: 100%;
+    font-size: 11pt;">Sin dal primo momento ho saputo di voler realizzare un'animazione di ambientazione fantascientifica. I due film da cui ho tratto ispirazione sono "Star Wars" (episodi: IV e VI) e "Il quinto elemento". In tutti e tre i film vi è un pianeta malvagio che viene distrutto. La mia idea era capovolgere le parti ovvero avere un pianeta buono e degli esseri invece cattivi senza però dichiararlo sin dall'inizio. <br/>
+  Poi ho iniziato la fase di charater design e storybarding.    </p>
+            <img src="res_1/ref.png" style="width: 100%;
     margin-bottom: 1em;
-    margin-top: 1em;" src="res_3/buildings_height.png"/>
-            <img src="res_3/buildings_layout.png" style="width: 60%;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 20%;"/>
-            <p style="color: #ffffff;
-    width: 80%;"> <span style="font-size: 16pt;
-    font-weight: bold;">LO SHADING</span><br><br>
-	In termini di shading è stato scelto il toon shader di Cycles, con i seguenti valori:</p>
-            <img src="res_3/whiteShader.PNG" style="width: 80%;
-    margin-left: 0;
-    margin-right: 10%;"/>
-            <p style="color: #ffffff;">mentre per le superfici luminose sono stati utilizzati degli emission shader con valori di intensità da 0.5 a 3. <br>Nella scena delle scale e del vicolo all’inizio si è deciso di compensare anche attraverso l’utilizzo di plane lights per aumentare la visibilità complessiva della scena.<br> La città è stata illuminata da una sun light con una dimensione relativamente bassa. Questo ha permesso di avere ombre nette, adatte alla stilizzazione scelta.<br><br><br><span style="font-size: 16pt;
-             font-weight: bold;">LE TEXTURE</span><br><br>
-Non sono state utilizzate particolari texture, infatti si è deciso di lasciare spazio alle possibilità espressive esclusive dello shader. Le uniche texture utilizzate sono quelle dei condizionatori d’aria degli edifici, il messaggio di evacuazione, il terminale e i dettagli delle placche del robot.</p>
-            <img src="res_3/AS_maps.png" style="width: 80%;
-    margin-left: 0;
-    margin-right: 10%;"/>
-            <img src="res_3/AS_maps2.png" style="width: 80%;
-    margin-left: 0;
-    margin-right: 10%;
     margin-top: 1em;"/>
-            <img src="res_3/AS_maps3.png" style="width: 80%;
-    margin-top: 1em;
-    margin-left: 0;
-    margin-right: 10%;"/>
-            <video preload="auto" autoplay="autoplay" loop="loop" muted style="margin: 1.5em auto 1em;
-    width: 48%;">
-                <source src="https://i.imgur.com/Q2q8TIu.mp4" type="video/mp4">
-            </video>
-            <video preload="auto" autoplay="autoplay" loop="loop" muted style="width: 48%;
-    block: ;
-    margin-left: 3%;
-    margin-right: auto;
-    margin-bottom: 1em;">
-                <source src="https://i.imgur.com/0otLRDm.mp4" type="video/mp4">
-            </video>
-            <p style="color: #ffffff;"><span style="font-size: 16pt;
-             font-weight: bold;">POST-PROCESSING</span></p>
-            <img style="width: 100%;" src="res_3/AS_compositing.png"/>
-            <p style="color: #ffffff;">
-Fulcro dell’aspetto visivo di Alpha sunshine è stato il post-processing. Gli effetti applicati sono i seguenti:<br><br><span style="font-size: 16pt; font-weight: bold;">MIST</span><br><br>
-Il colore delle mesh sullo sfondo viene gradualmente filtrato. Questo effetto contribuisce ad aumentare il senso di un’atmosfera pesante e di un ambiente desolato, nonché ad appiattire lo sfondo per far risaltare l’azione in primo piano.<br><br><span style="font-size: 16pt; font-weight: bold;">EDGE NODE</span><br><br>
-Sostituto più efficiente del freestyle di blender, questo effetto scontorna le mesh con delle linee. Oltre a migliorare l’estetica dei modelli, contribuisce a dare maggiore definizione agli stessi. <br><br><span style="font-size: 16pt; font-weight: bold;">COLOR BALANCE</span><br><br>
-Una correzione colore per dare maggiore omogeneità all’immagine. <br><br><span style="font-size: 16pt; font-weight: bold;">GLARE</span><br><br>
-Fulcro centrale dello stile di Alpha Sunshine, il bagliore generato dalle superfici chiare vuole risaltare l’intensità del sole e dare dunque l’idea di una giornata di sole molto intenso. <br><br><span style="font-size: 16pt; font-weight: bold;">LENS DISTORTION</span><br><br>
-L’aberrazione cromatica simula i difetti degli obiettivi fotografici e cinematografici</p>
             <img style="width: 100%;
-    margin-bottom: 1em;" src="res_3/comparison.png"/>
-            <img style="width: 100%;" src="res_3/comparison2.png"/>
-            <p style="color: #ffffff;">
-Le scene sono state pensate con uno screen ratio di 1:2,35 per effetto estetico e cinematografico. </p>
+    margin-bottom: 1em;" src="res_1/sto2.png"/>
+            <img style="width: 100%;
+    margin-bottom: 1em;" src="res_1/sto1.png"/>
+            <img src="res_1/stu.png" style="width: 100%;
+    margin-bottom: 1em;"/>
             <div name="anchor" style="width: 50%;
     color: #ffffff;
     font-weight: 700;
@@ -121,7 +64,7 @@ Le scene sono state pensate con uno screen ratio di 1:2,35 per effetto estetico 
     text-transform: uppercase;
     margin: 6em 25% 2em;
     text-align: center;">
-                <a href="index.html" style="text-decoration: none;" class="linkTitoli">Torna alla homepage</a>
+                <a href="index.html" class="linkTitoli">Torna alla homepage</a>
             </div>
         </div>
     </body>
